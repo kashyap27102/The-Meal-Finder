@@ -26,7 +26,7 @@
             </figure>
             <!-- SEARCHBAR -->
             <form class="d-flex searchbox m-auto my-3">
-                <input id="searchfield" class="form-control me-2" type="text" placeholder="Enter an ingredients">
+                <input id="searchfield" class="form-control me-2 " type="text" placeholder="Enter an ingredients">
                 <button id="searchbtn" class="btn btn-orange text-white" type="button">Search</button>
             </form>
         </div>
@@ -34,7 +34,7 @@
         <!-- SEARCH BY -->
         <div class="container text-center">
             <!-- Search By Area -->
-            <div class="dropdown d-inline-block mx-3">
+            <div class="dropdown d-inline-block mx-3 my-2">
                 <button class="btn btn-orange dropdown-toggle" type="button" id="searchByArea" data-bs-toggle="dropdown" aria-expanded="false">
                 Search By Area
                 </button>
@@ -42,7 +42,7 @@
                 </ul>
             </div>
             <!-- Search BY Category -->
-            <div class="dropdown d-inline-block mx-3">
+            <div class="dropdown d-inline-block mx-3 my-2">
                 <button class="btn btn-orange dropdown-toggle" type="button" id="searchByCategory" data-bs-toggle="dropdown" aria-expanded="false">
                 Search By Category
                 </button>
@@ -53,7 +53,7 @@
         <hr>
         <!-- RESULT AREA -->
         <div class="container">
-            <h2 class="text-center fw-bolder my-5">Your Search Result</h2>
+            <h2 class="text-center fw-bolder my-sm-5">Your Search Result</h2>
             <!-- All Searched Recepies -->
             <div id="recepies" class="row justify-content-center"></div>
         </div>
@@ -65,7 +65,7 @@
                 <h3 id="mealTitle" class="card-title fw-bolder my-3">Meal Title Name</h3>
                 <h4 id="categoryTitle" class="card-title my-3">Category Name</h4>
                 <h3 class="fw-bolder my-3">Instruction:</h3>
-                <p id="details" class="card-text my-3 fw-normal px-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, exercitationem.</p>
+                <p id="details" class="card-text my-3 fw-normal px-sm-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, exercitationem.</p>
                 <div class="circle-img">
                     <img id="mealImage" src="./food-img.jpg" alt="">
                 </div>

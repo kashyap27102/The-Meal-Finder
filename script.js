@@ -76,7 +76,7 @@ searchByCategory.addEventListener("click", () => {
       .then((response) => response.text())
       .then((text) => {
         let data = JSON.parse(text).meals;
-        // console.log(data);
+        console.log(data);
         let li = "";
         data.forEach((element, index) => {
           let category = element.strCategory;
@@ -111,7 +111,7 @@ function getResponse(input) {
                     <img src="${element.strMealThumb}" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                     <h5 class="card-title my-2 fw-bold">${element.strMeal}</h5>
-                    <button onclick="getRecepieDetail(${element.idMeal})" id="${index}" class="btn btn-orange my-2" type="button" >Get Recepies</button>
+                    <button onclick="getRecepieDetail(${index},${element.idMeal})" id="${index}" class="btn btn-orange my-2" type="button" >Get Recepies</button>
                     </div>
                         </div>
                         `;
@@ -139,7 +139,7 @@ function getResponsebyArea(input) {
                     <img src="${element.strMealThumb}" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                     <h5 class="card-title my-2 fw-bold">${element.strMeal}</h5>
-                    <button onclick="getRecepieDetail(${index})" id="${index}" class="btn btn-orange my-2" type="button" >Get Recepies</button>
+                    <button onclick="getRecepieDetail(${index},${element.idMeal})" id="${index}" class="btn btn-orange my-2" type="button" >Get Recepies</button>
                     </div>
                         </div>
                         `;
@@ -151,7 +151,7 @@ function getResponsebyArea(input) {
 }
 
 function getResponsebyCategory(input) {
-  // console.log('clicked');
+  console.log(input);
   let data;
   let url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${input}`;
   fetch(url, { method: "GET" })
@@ -177,18 +177,16 @@ function getResponsebyCategory(input) {
     });
 }
 
-function getRecepieDetail(id) {
-  console.log(id);
+function getRecepieDetail(id,idMeal) {
+  console.log(idMeal);
   let mealdetails = document.getElementById("meal-details");
-  let url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+  let url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
   mealdetails.style.display = "block";
-  // console.log(document.getElementById(input).parentElement.parentElement);
-
   fetch(url, { method: "GET" })
     .then((response) => response.text())
     .then((text) => {
       let data = JSON.parse(text);
-      // console.log(data.meals[0].strMeal);
+      console.log(data.meals[0].strMeal);
       document.getElementById("mealTitle").innerText = data.meals[0].strMeal;
       document.getElementById("categoryTitle").innerText =
         data.meals[0].strCategory;
